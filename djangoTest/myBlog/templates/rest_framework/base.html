@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+			<script type="text/javascript" src="{{STATIC_URL}}angular/angular1-0-8.js"></script>
+			<script type="text/javascript" src="{{STATIC_URL}}app.js"></script>
+			<script type="text/javascript" src="{{STATIC_URL}}angular/angular-cookies.js"></script>
+			<!--<script type="text/javascript" src="{{STATIC_URL}}angular/angular-resource.js"></script>-->
+			<script type="text/javascript" src="{{STATIC_URL}}service.js"></script>
+			<script type="text/javascript" src="{{STATIC_URL}}post-controller.js"></script>
+			<script type="text/javascript" src="{{STATIC_URL}}post-service.js"></script>	
+			
+	</head>
+</html>
+<body ng-app="Blog">
+	<p>start blocking</p>
+{% block content %}{% endblock %}
+</body>
