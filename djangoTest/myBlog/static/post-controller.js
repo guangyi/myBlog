@@ -7,15 +7,19 @@
 		$scope.gloables.is_authenticated = is_authenticated;
 	}
 });*/
-Blog.controller('postCtrl', function($scope,PostService,$http){
+Blog.controller('postCtrl', function($scope,PostService,posts,$http){
 	//$scope.posts = posts;
 	//$scope.globals = GlobalService;
-	$http({
+	/*$http({
 		method:'GET',
 		url:'/'
 	}).success(function(data,status,hearders,config){
 		$scope.posts = data;
-	})
+	})*/
+	$scope.posts = posts;
+	if ($scope.posts == []){
+		$scope.posts = '';
+	}
 	$scope.open = function(action){
 		if(action ==='create'){
 			$scope.postModalCreate = true;
@@ -26,7 +30,7 @@ Blog.controller('postCtrl', function($scope,PostService,$http){
 		$http({
 			//post can't get return data?
 			method:'POST',
-			url:'/',
+			url:'posts/',
 			data:$scope.post
 		}).success(function(data,status,headers,config){
 			$scope.posts.push(data);
@@ -43,3 +47,6 @@ Blog.controller('postCtrl', function($scope,PostService,$http){
 		});*/
 	};
 });
+Blog.controller('detailCtrl',function($scope,PostService, post, $http){
+	$scope.post = post;
+	});

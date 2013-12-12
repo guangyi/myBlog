@@ -1,7 +1,7 @@
 # Django settings for djangoTest project.
 import os.path
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__).decode('utf-8')).replace('\\', '/')
-TEMPLATE_ROOT = os.path.join(PROJECT_ROOT, "templates")
+TEMPLATE_ROOT = os.path.join(PROJECT_ROOT, "myBlog/templates")
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -109,8 +109,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'djangoTest.urls'
 
-TEMPLATE_DIRS = (
-    TEMPLATE_ROOT,             
+TEMPLATE_DIRS = (         
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -133,6 +132,7 @@ INSTALLED_APPS = (
 '''REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': (
         'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.TemplateHTMLRenderer',
     )         
 }'''
 # A sample logging configuration. The only tangible logging

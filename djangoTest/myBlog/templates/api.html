@@ -1,0 +1,21 @@
+{% extends 'rest_framework/base.html'%}
+{% block content %}
+	<div ng-controller="postCtrl">
+		<label for="id_title">Title</label>
+		<input type = "text" id="id_title" placeholder="Title" ng-model="post.title">
+		<label for="id_description">description</label>
+		<textarea type="text" id="id_description" ng-model="post.description"> </textarea>
+		<button ng-click="create()">create</button>
+		<!--Django's way to render a view
+		{% for post in post_list %}
+			<p>{{ post.title }}</p>
+			<p>{{post.description}}</p>
+		{% endfor %}-->
+		<p>HEllo{$ posts $}</p>
+		<div ng-repeat="post in posts">
+			<h2>{$ post.title $}</h2>
+			<p>{$ post.description $}</p>
+			<h3>{$ post.created_on $}</p>
+		</div>
+	</div>
+{% endblock %}

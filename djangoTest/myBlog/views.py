@@ -5,6 +5,8 @@ from models import Post
 import json
 from django.core import serializers
 from serializer import postSerializer
+from rest_framework.renderers import TemplateHTMLRenderer
+from rest_framework.response import Response
 
 def createPost(request):
     #post = json.loads(request.raw_post_data)
@@ -18,5 +20,10 @@ def createPost(request):
 class myPostList(generics.ListCreateAPIView):
     model = Post
     serializer_class = postSerializer
-   # template_name = 'myBlog/post_list.html'
-     
+    #renderer_classes = (TemplateHTMLRenderer,)
+    #lookup_field = "id"
+    #renderer_classes=(TemplateHTMLRenderer,)
+class postDetail(generics.RetrieveUpdateDestroyAPIView):
+    model = Post    
+    serializer_class = postSerializer
+    

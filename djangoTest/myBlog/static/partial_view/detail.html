@@ -1,0 +1,14 @@
+<!--detail-->
+<div>
+	<p> post Detail </p>
+	<h2>{$ post.title $}</h2>
+	<h3>{$ post.description $}</h3>
+	<p>{$ post.created_on $}</p>
+</div>
+	<!--<script>
+// Add the CSRF Token
+var app = angular.module('Blog'); // Not including a list of dependent modules (2nd parameter to `module`) "re-opens" the module for additional configuration
+app.config(['$httpProvider', function($httpProvider){
+    $httpProvider.defaults.headers.common['X-CSRFToken'] = '{{ csrf_token|escapejs }}';
+}]);
+</script>-->
