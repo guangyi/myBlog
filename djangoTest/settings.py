@@ -14,6 +14,10 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
+       # 'ENGINE':'dbindexer',
+       # 'TARGET':'mongodb',
+       # },
+    #'mongodb':{
         'ENGINE': 'django_mongodb_engine', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'blog_posts',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
@@ -40,7 +44,7 @@ TIME_ZONE = 'America/Chicago'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
 
-SITE_ID = 1
+SITE_ID = u'52b3f1f4d83e9102a575ccbf'
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -100,6 +104,7 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    #'autoload.middleware.AutoloadMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -114,27 +119,41 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
+#AUTHENTICATION_BACKENDS = (
+#   'permission_backend_nonrel.backends.NonrelPermissionBackend',
+#)
 
 INSTALLED_APPS = (
+    #'autoload',
+    #'dbindexer',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
+    #'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myBlog',
     'rest_framework',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
+    'djangotoolbox',
+    #'permission_backend_nonrel',
+#    'django-permission-backend-nonrel',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    
 )
-'''REST_FRAMEWORK = {
-    'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework.renderers.JSONRenderer',
-        'rest_framework.renderers.TemplateHTMLRenderer',
-    )         
-}'''
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+ 
+#    'DEFAULT_RENDERER_CLASSES': (
+ #       'rest_framework.renderers.BrowsableAPIRenderer',
+#    ),   
+}
+
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error.
@@ -157,3 +176,12 @@ LOGGING = {
         },
     }
 }
+#after login, where to go
+LOGIN_REDIRECT_URL = '/'
+
+#AUTOLOAD_SITECONF = 'indexes'
+#DBINDEXER_BACKENDS = (
+#    'dbindexer.backends.BaseResolver',
+#    'dbindexer.backends.FKNullFix',
+#    'dbindexer.backends.InMemoryJOINResolver',
+#)'''

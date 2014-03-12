@@ -1,9 +1,49 @@
 <!--detail-->
+<!--
 <div>
-	<p> post Detail </p>
-	<h2>{$ post.title $}</h2>
-	<h3>{$ post.description $}</h3>
+	<!--Logic error!!!
+	
+	<h2>title:</h2> 
+	<h3 ng-show="!editing" >{$ post.title $}</h3>
+	//cannot do data binding in input
+	//if user click 'cancel', even the value of input changed, 
+	it needs to go back to previouse value
+	<input ng-show='editing' ng-model= 'newPost.title' value='{$post.title$}'>
+	
+	<h3>content:</h3>
+	<h3 ng-show='!editing'> {$ post.description $}</h3>
+	<textarea ng-show='editing' ng-model='newPost.description' ></textarea>
+	
+	<button ng-show='editing' ng-click='save()'>Save</button>
 	<p>{$ post.created_on $}</p>
+	<p>{$post.author.username $}, {$ post.author.email $}</p>
+	<button ng-click="editOrCancel()">{$ editing | Edit $}</button>
+	
+	<!--Delete function
+	<button ng-click="delete()">Delete</button>
+	<a href='#/'>post lists</a>
+</div>-->
+
+<div class=".container main">
+	<div class="title">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="row">
+				<div class="col-md-9">
+					<h1><a href="#/">FlyAway</a></h1>
+				</div>
+				<div class="col-md-3" style="background:#ff6666">FaceBook LinkedIn GitHub</div>
+			</div>
+		</div>
+	</div>
+	<div class="row contentWrapper">
+		<div class="col-md-8 col-md-offset-2 content">
+			<h1 ng-show="!editing" class="postTitle">{$ post.title $}</h1>
+			<hr>
+			<p class="author"><small>By {$ post.author.username $} on {$ post.created_on $}</small></p>
+			<p class="postContent">{$ post.description $}</p>
+		</div>
+		<a type="button" class="btn btn-default backBtn" href="#/"><p>H</p><p>O</p><p>M</p><p>E</p></a>
+	</div>
 </div>
 	<!--<script>
 // Add the CSRF Token

@@ -1,19 +1,35 @@
 <!DOCTYPE html>
-<!--Base html-->
-<html lang="en" >
-	<head>
-			<script type="text/javascript" src="{{STATIC_URL}}angular/angular1-0-8.js"></script>
-			<script type="text/javascript" src="{{STATIC_URL}}app.js"></script>
-			<script type="text/javascript" src="{{STATIC_URL}}angular/angular-cookies.js"></script>
-			<!--<script type="text/javascript" src="{{STATIC_URL}}angular/angular-resource.js"></script>-->
-			<script type="text/javascript" src="{{STATIC_URL}}service.js"></script>
-			<script type="text/javascript" src="{{STATIC_URL}}post-controller.js"></script>
-			<script type="text/javascript" src="{{STATIC_URL}}post-service.js"></script>	
-			
-	</head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="{{STATIC_URL}}lib/jquery-1.10.2.js"></script>
+    
+    <!-- Bootstrap -->
+    <link href="{{STATIC_URL}}lib/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="{{STATIC_URL}}lib/bootstrap-3.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/stylesheets/screen.css">
+    <script type="text/javascript" src="{{STATIC_URL}}lib/angular/angular1-0-8.js"></script>
+	<script type="text/javascript" src="{{STATIC_URL}}js/app.js"></script>
+	<script type="text/javascript" src="{{STATIC_URL}}lib/angular/angular-cookies.js"></script>
+	<!--<script type="text/javascript" src="{{STATIC_URL}}angular/angular-resource.js"></script>-->
+	<script type="text/javascript" src="{{STATIC_URL}}js/post-controller.js"></script>
+	<script type="text/javascript" src="{{STATIC_URL}}js/post-service.js"></script>
+	<script type="text/javascript" src="{{STATIC_URL}}js/filters.js"></script>	
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
 </html>
+<!--index html in Templates folder -->
 <body ng-app="Blog">
-	<p>start blocking</p>
+	<!--<p>start blocking</p>
+	<a href='api-auth/login'>login</a>-->
 	<ng-view></ng-view>
 </body>
 
