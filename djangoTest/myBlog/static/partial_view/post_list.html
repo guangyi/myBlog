@@ -30,7 +30,7 @@
 				<h1 class="postTitle"><a href= '{$ post.post_url $}'>{$ post.title $}</a></h1><hr>
 				<p class="author"><small>By {$ post.author.username $} on {$ post.created_on $}</small></p>
 				<p class="postContent">
-					<a href="{$ post.post_url $}">{$ post.description $}</a>
+					<a href="{$ post.post_url $}">{$ post.description | limitTo:200 $}...</a>
 				</p>
 				<p class="readMore"><a href="{$ post.post_url $}">ReadMore</a></p>
 				<hr>

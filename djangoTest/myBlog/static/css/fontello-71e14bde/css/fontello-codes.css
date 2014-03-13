@@ -1,0 +1,14 @@
+.icon-facebook, .icon-github-circled, .icon-twitter {
+	
+	-webkit-border-radius: 0.1em;
+  	-moz-border-radius: 0.1em;
+ 	-ms-border-radius: 0.1em;
+  	-o-border-radius: 0.1em;
+ 	border-radius: 0.1em;;
+}
+.icon-facebook:before { content: '\e800'; } /* '' */
+.icon-facebook-squared:before { content: '\e801'; } /* '' */
+.icon-github-squared:before { content: '\e804'; } /* '' */
+.icon-github-circled:before { content: '\e803'; } /* '' */
+.icon-twitter-squared:before { content: '\e805'; } /* '' */
+.icon-twitter:before { content: '\e802'; } /* '' */

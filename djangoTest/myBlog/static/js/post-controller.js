@@ -16,6 +16,7 @@ Blog.controller('postCtrl', function($scope,PostService,posts,$http, $location){
 	}).success(function(data,status,hearders,config){
 		$scope.posts = data;
 	})*/
+$scope.limits = 300;
 $scope.show = false;
 	$scope.posts = posts;
 	if ($scope.posts == []){

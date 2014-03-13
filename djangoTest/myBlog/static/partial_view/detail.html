@@ -45,6 +45,28 @@
 		<a class="btn btn-default backBtn" href="#/"><p>H</p><p>O</p><p>M</p><p>E</p></a>
 	</div>
 </div>
+<div>
+	<!--Logic error!!!
+	
+	<h2>title:</h2> 
+	<h3 ng-show="!editing" >{$ post.title $}</h3>
+	//cannot do data binding in input
+	//if user click 'cancel', even the value of input changed, 
+	it needs to go back to previouse value
+	<input ng-show='editing' ng-model= 'newPost.title' value='{$post.title$}'>
+	
+	<h3>content:</h3>
+	<h3 ng-show='!editing'> {$ post.description $}</h3>
+	<textarea ng-show='editing' ng-model='newPost.description' ></textarea>
+	
+	<button ng-show='editing' ng-click='save()'>Save</button>
+	<p>{$ post.created_on $}</p>
+	<p>{$post.author.username $}, {$ post.author.email $}</p>
+	<button ng-click="editOrCancel()">{$ editing | Edit $}</button>
+	
+	<!--Delete function
+	<button ng-click="delete()">Delete</button>
+	<a href='#/'>post lists</a>
 	<!--<script>
 // Add the CSRF Token
 var app = angular.module('Blog'); // Not including a list of dependent modules (2nd parameter to `module`) "re-opens" the module for additional configuration

@@ -26,7 +26,7 @@ body {
 	//set height=100% also set html, body height100%, will let that
 	// div set to be the height of window. with overflow:auto/hidden can set
 	// different scroll effect.
-	@include background-image(linear-gradient(top, $bgTop 170px, $bgBottom 170px));
+	@include background-image(linear-gradient(top, $bgTop 180px, $bgBottom 181px));
 	overflow:auto;
 	min-height:100%;
 }
@@ -49,7 +49,19 @@ body {
 		}
 	}
 	.followLink{
+		h2{
+			margin-top:40px;
+			a{
+				border:1px solid transparent;
+				color:#fff;
+				&:hover{
+					color:#FF7A7A;
+					//border:1px solid #ff6666;
+				}
+			}
+		}
 		@include border-radius(0.1em);
+		text-align: center;
 	}
 }
 
@@ -81,12 +93,16 @@ body {
 		color:#333;
 		font-size:1.5em;
 		a{
+			height:5em;
 			color:#333;
+			text-overflow: ellipsis;
 			&:hover{
 				text-decoration:none;
 				color:#000
 			}
 		}
+		height:5em;
+		text-overflow: ellipsis;
 	}
 	.readMore{
 		a{
