@@ -3,119 +3,197 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 /************* list of all posts page *******/
-/* line 15, ../sass/screen.scss */
+/* line 17, ../sass/screen.scss */
 html {
   height: 100%;
 }
 
-/* line 19, ../sass/screen.scss */
+/* line 21, ../sass/screen.scss */
 body {
   height: 100%;
   min-height: 100%;
 }
 
-/* line 23, ../sass/screen.scss */
+/* line 25, ../sass/screen.scss */
 .main {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 200, color-stop(100%, #9ee0ff), color-stop(100%, #dddddd));
-  background-image: -webkit-linear-gradient(top, #9ee0ff 200px, #dddddd 200px);
-  background-image: -moz-linear-gradient(top, #9ee0ff 200px, #dddddd 200px);
-  background-image: -o-linear-gradient(top, #9ee0ff 200px, #dddddd 200px);
-  background-image: linear-gradient(top, #9ee0ff 200px, #dddddd 200px);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 170, color-stop(100%, #9ee0ff), color-stop(100%, #dddddd));
+  background-image: -webkit-linear-gradient(top, #9ee0ff 170px, #dddddd 170px);
+  background-image: -moz-linear-gradient(top, #9ee0ff 170px, #dddddd 170px);
+  background-image: -o-linear-gradient(top, #9ee0ff 170px, #dddddd 170px);
+  background-image: linear-gradient(top, #9ee0ff 170px, #dddddd 170px);
   overflow: auto;
   min-height: 100%;
 }
 
-/* line 31, ../sass/screen.scss */
+/* line 33, ../sass/screen.scss */
 .title {
   color: white;
   width: 100%;
   height: auto;
   position: fixed;
   top: 0;
-  z-index: 5;
+  margin-left: 0;
+  z-index: 3;
   background: #9ee0ff;
 }
-/* line 39, ../sass/screen.scss */
+/* line 42, ../sass/screen.scss */
 .title h1 {
   font-size: 3em;
 }
-/* line 41, ../sass/screen.scss */
+/* line 44, ../sass/screen.scss */
 .title h1 a {
   color: inherit;
 }
-/* line 43, ../sass/screen.scss */
+/* line 46, ../sass/screen.scss */
 .title h1 a:hover {
   text-decoration: none;
 }
+/* line 51, ../sass/screen.scss */
+.title .followLink {
+  -webkit-border-radius: 0.1em;
+  -moz-border-radius: 0.1em;
+  -ms-border-radius: 0.1em;
+  -o-border-radius: 0.1em;
+  border-radius: 0.1em;
+}
 
-/* line 50, ../sass/screen.scss */
+/* line 56, ../sass/screen.scss */
 .contentWrapper {
   margin-top: 7%;
   width: 100%;
   height: 100%;
 }
 
-/* line 55, ../sass/screen.scss */
+/* line 61, ../sass/screen.scss */
 .content {
   padding: 2em 3%;
   position: relative;
   background: #FFF;
   min-height: 700px;
   height: 100%;
-  -webkit-border-radius: 1em;
-  -moz-border-radius: 1em;
-  -ms-border-radius: 1em;
-  -o-border-radius: 1em;
-  border-radius: 1em;
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  -ms-border-radius: 0.3em;
+  -o-border-radius: 0.3em;
+  border-radius: 0.3em;
 }
-/* line 62, ../sass/screen.scss */
+/* line 68, ../sass/screen.scss */
 .content .post {
   margin-top: 3em;
 }
-/* line 64, ../sass/screen.scss */
+/* line 70, ../sass/screen.scss */
 .content .post:nth-child(1) {
   margin-top: 0;
 }
-/* line 68, ../sass/screen.scss */
+/* line 74, ../sass/screen.scss */
 .content .postTitle, .content .postTitle a {
   color: #78a632;
 }
-/* line 71, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 .content .author {
   color: black;
 }
-/* line 74, ../sass/screen.scss */
+/* line 80, ../sass/screen.scss */
 .content .postContent {
   color: #333;
   font-size: 1.5em;
 }
-/* line 77, ../sass/screen.scss */
+/* line 83, ../sass/screen.scss */
 .content .postContent a {
   color: #333;
 }
-/* line 79, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 .content .postContent a:hover {
   text-decoration: none;
   color: black;
 }
-/* line 86, ../sass/screen.scss */
+/* line 92, ../sass/screen.scss */
 .content .readMore a {
-  color: #ff6666;
+  color: #ff7a7a;
 }
-/* line 88, ../sass/screen.scss */
+/* line 94, ../sass/screen.scss */
 .content .readMore a:hover {
   text-decoration: underline;
 }
 
-/* line 96, ../sass/screen.scss */
+/* line 101, ../sass/screen.scss */
+.new {
+  position: fixed;
+  padding-left: 0;
+}
+/* line 104, ../sass/screen.scss */
+.new a {
+  background: #ff7a7a;
+  color: #fff;
+}
+/* line 107, ../sass/screen.scss */
+.new a:hover {
+  text-decoration: none;
+  background: #ff6666;
+  color: #fff;
+}
+/* line 113, ../sass/screen.scss */
+.new h1 {
+  margin: 10px 0px;
+}
+
+/* line 117, ../sass/screen.scss */
 .backBtn {
   position: fixed;
   top: 40%;
   left: 0;
-  background: #ff6666;
+  background: #ff7a7a;
 }
-/* line 101, ../sass/screen.scss */
+/* line 122, ../sass/screen.scss */
+.backBtn:hover {
+  background: #ff6666;
+  color: #fff;
+}
+/* line 126, ../sass/screen.scss */
 .backBtn p {
   margin: 0;
   color: #fff;
+}
+
+/* line 132, ../sass/screen.scss */
+.newPostForm .newPostTitle {
+  color: #78a632;
+}
+/* line 135, ../sass/screen.scss */
+.newPostForm .titleInput {
+  height: 2em;
+}
+/* line 138, ../sass/screen.scss */
+.newPostForm input[type="text"] {
+  font-size: 1.5em;
+}
+/* line 141, ../sass/screen.scss */
+.newPostForm textarea[type="text"] {
+  font-size: 1em;
+}
+
+/* line 146, ../sass/screen.scss */
+.createBtn {
+  background: #ff7a7a;
+  color: #fff;
+}
+
+/* line 150, ../sass/screen.scss */
+.notice {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.7);
+}
+/* line 158, ../sass/screen.scss */
+.notice .message {
+  position: relative;
+  margin: auto;
+  color: #ff6666;
+  width: 35%;
+  top: 30%;
+  line-height: 2em;
 }

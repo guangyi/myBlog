@@ -1,6 +1,6 @@
 'use strict';
 
-var Blog = angular.module("Blog",["ngCookies"], function($interpolateProvider){
+var Blog = angular.module("Blog",["ngCookies","ngAnimate","ngRoute"], function($interpolateProvider){
 	$interpolateProvider.startSymbol("{$");
 	$interpolateProvider.endSymbol("$}");
 });
@@ -27,6 +27,15 @@ Blog.config(function ($routeProvider){
 				post:function($route, PostService){
 					var postID = $route.current.params.id;
 					return PostService.get(postID);
+				}
+			}
+		})
+		.when('/create',{
+			templateUrl:'static/partial_view/create.html',
+			controller:"postCtrl",
+			resolve:{
+				posts:function(PostService){
+					return PostService.list();
 				}
 			}
 		})

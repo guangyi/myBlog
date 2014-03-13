@@ -6,9 +6,11 @@
 //@import "compass/reset";
 $BlogTitleColor:#FFF;
 $postTitleColor:#78A632;
+$newPostTitle:#78A632;
 $bgTop:#9EE0FF;
 $bgBottom:#DDD;
-$readMoreColor:#ff6666;
+$readMoreColor:#FF7A7A;
+$readMoreColorDark:#ff6666;
 $authorColor:#000;
 @import "compass";
 /************* list of all posts page *******/
@@ -24,7 +26,7 @@ body {
 	//set height=100% also set html, body height100%, will let that
 	// div set to be the height of window. with overflow:auto/hidden can set
 	// different scroll effect.
-	@include background-image(linear-gradient(top, $bgTop 200px, $bgBottom 200px));
+	@include background-image(linear-gradient(top, $bgTop 170px, $bgBottom 170px));
 	overflow:auto;
 	min-height:100%;
 }
@@ -34,19 +36,23 @@ body {
 	height:auto;
 	position:fixed;
 	top:0;
-	z-index:5;
+	margin-left:0;
+	z-index:3;
 	background:$bgTop;
 	h1{
 		font-size: 3em;
 		a{
 			color:inherit;
 			&:hover{
-			text-decoration: none;
-		}
+				text-decoration: none;
+			}
 		}
 	}
-
+	.followLink{
+		@include border-radius(0.1em);
+	}
 }
+
 .contentWrapper{
 	margin-top:7%;
 	width:100%;
@@ -58,7 +64,7 @@ body {
 	background:#FFF;
 	min-height:700px;
 	height:100%;
-	@include border-radius(1em);
+	@include border-radius(0.3em);
 	.post{
 		margin-top:3em;
 		&:nth-child(1){
@@ -91,16 +97,71 @@ body {
 		}
 		
 	}
-	
+}
+.new{
+	position:fixed;
+	padding-left:0;
+	a{
+		background:$readMoreColor;
+		color:#fff;
+		&:hover{
+			text-decoration: none;
+			background:$readMoreColorDark;
+			color:#fff;
+		}
+	}
+	h1{
+		margin:10px 0px;
+	}
 }
 .backBtn{
 	position:fixed;
 	top:40%;
 	left:0;
 	background:$readMoreColor;
+	&:hover{
+			background:$readMoreColorDark;
+			color:#fff;
+		}
 	p{
 		margin:0;
 		color:#fff;//$readMoreColor;
-		
 	}
 }
+.newPostForm{
+	.newPostTitle{
+		color:$newPostTitle;
+	}
+	.titleInput{
+		height:2em;
+	}
+	input[type="text"]{
+		font-size: 1.5em;
+	}
+	textarea[type="text"]{
+		font-size:1em;
+	}
+}
+
+.createBtn{
+	background:$readMoreColor;
+	color:#fff;
+}
+.notice{
+	width:100%;
+	height:100%;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:5;
+	background:rgba(255,255,255, 0.7);
+	.message{
+		position:relative;
+		margin:auto;
+		color:#ff6666;
+		width:35%;
+		top:30%;
+		line-height:2em;
+	}
+}
+	

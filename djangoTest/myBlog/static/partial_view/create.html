@@ -1,0 +1,20 @@
+<div class="notice" ng-show="show">
+	<div class="message"><h1>{$ msg $}</h1></div>
+</div>
+<div class="row contentWrapper">
+	<div class="col-md-8 col-md-offset-2 content">
+		
+		<form role="form">
+			<div class="form-group newPostForm">
+				<label for="id_title" class="newPostTitle"><h2>Title</h2></label>
+				<input type = "text" id="id_title" class="form-control titleInput" placeholder="Title" ng-model="post.title">
+				
+				<label for="id_description" class="newPostTitle"><h2>Blog</h2></label>
+				<textarea type="text" id="id_description" class="form-control" rows="40" ng-model="post.description"> </textarea>
+			</div>
+			<button class="btn btn-default createBtn" ng-click="create()">create</button>
+		</form>
+	</div>
+	<a type="button" class="btn btn-default backBtn" href="#/"><p>H</p><p>O</p><p>M</p><p>E</p></a>
+</div><!-- end of contentWrapper -->
+<!-- </div>end of main container-->

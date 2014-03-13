@@ -9,18 +9,21 @@
 	{% for post in post_list %}
 		<p>{{ post.title }}</p>
 		<p>{{post.description}}</p>
-	{% endfor %}-->	
+	{% endfor %}-->
+<!--		
 <div class=".container main">
-	<div class="title">
+	<div class=" row title">
 		<div class="col-md-8 col-md-offset-2">
-			<div class="row">
-				<div class="col-md-9">
-					<h1>FlyAway</h1>
+			<div class="row"> 
+				<div class="col-md-8">
+					<h1><a href="#/">FlyAway</a></h1>
 				</div>
-				<div class="col-md-3" style="background:#ff6666">FaceBook LinkedIn GitHub</div>
+				<div class="col-md-4 followLink">
+					<h4>FaceBook LinkedIn  GitHub</h4>
+				</div>
 			</div>
 		</div>
-	</div>
+	</div>-->
 	<div class="row contentWrapper">
 		<div class="col-md-8 col-md-offset-2 content">
 			<div ng-repeat="post in posts" class="post">
@@ -33,19 +36,8 @@
 				<hr>
 			</div>
 		</div>
+	<div class="col-md-2 col-md-offset-10 new">
+		<a class="btn btn-xs btn-default" href="#/create"><h1>+</h1></a>
+	</div>
 	</div><!--end of contentWrapper-->
 </div>
-	<!--<script>
-// Add the CSRF Token
-var app = angular.module('Blog'); // Not including a list of dependent modules (2nd parameter to `module`) "re-opens" the module for additional configuration
-app.config(['$httpProvider', function($httpProvider){
-    $httpProvider.defaults.headers.common['X-CSRFToken'] = '{{ csrf_token|escapejs }}';
-}]);
-</script>
-
-<div ng-repeat="post in posts">
-				<a href="{$ post.author.user_url $}"> <p>{$ post.author.username $}</p></a> <p> {$ post.author.email $}</p>
-				<h2><a href= '{$ post.post_url $}'>{$ post.title $}</a></h2>
-				<h3>{$ post.description $}</h3>
-				<!--<p>{$ post.created_on $}</p>
-			</div>-->

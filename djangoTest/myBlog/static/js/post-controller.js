@@ -7,7 +7,7 @@ var appController = Blog.controller('appController', function($scope,$rootScope,
 		$scope.gloables.is_authenticated = is_authenticated;
 	}
 });
-Blog.controller('postCtrl', function($scope,PostService,posts,$http){
+Blog.controller('postCtrl', function($scope,PostService,posts,$http, $location){
 	//$scope.posts = posts;
 	//$scope.globals = GlobalService;
 	/*$http({
@@ -16,6 +16,7 @@ Blog.controller('postCtrl', function($scope,PostService,posts,$http){
 	}).success(function(data,status,hearders,config){
 		$scope.posts = data;
 	})*/
+$scope.show = false;
 	$scope.posts = posts;
 	if ($scope.posts == []){
 		$scope.posts = '';
@@ -27,25 +28,18 @@ Blog.controller('postCtrl', function($scope,PostService,posts,$http){
 		};
 	};
 	$scope.create = function(){
-		$http({
-			//post can't get return data?
-			method:'POST',
-			url:'posts/',
-			data:$scope.post
-		}).success(function(data,status,headers,config){
-			$scope.posts.push(data);
-			//Clear data
-			$scope.post = {};
-		})
-	
-		/*
 		PostService.save($scope.post).then(function(data){
+			$scope.show = true;
+			$scope.msg = "✓Your blog has been published successfully!";
 			$scope.post = data;
 			$scope.posts.push(data);
-			$scope.postModalCreate = false;
-		}, function(status){
-			console.log(status);
-		});*/
+		}, function(reason){
+			$scope.show = true;
+			$scope.msg = "Oops! Error. blog not published, try again!"
+		},function(update){
+		}).then(function(data){
+			$location.path('/');
+		});
 	};
 });
 Blog.controller('userCtrl',function($scope, UserService, users){
