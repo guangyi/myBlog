@@ -26,7 +26,7 @@ body {
 	//set height=100% also set html, body height100%, will let that
 	// div set to be the height of window. with overflow:auto/hidden can set
 	// different scroll effect.
-	@include background-image(linear-gradient(top, $bgTop 180px, $bgBottom 181px));
+	@include background-image(linear-gradient(top, $bgTop 200px, $bgBottom 200px));
 	overflow:auto;
 	min-height:100%;
 }
@@ -155,7 +155,7 @@ body {
 		font-size: 1.5em;
 	}
 	textarea[type="text"]{
-		font-size:1em;
+		font-size:1.2em;
 	}
 }
 
